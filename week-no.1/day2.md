@@ -136,3 +136,92 @@ String 字符串，用"" 括起来的一个或多个字符。
 
 > 补充：字符串可以通过“+“来拼接，任何数字类型通过“+“号连接字符串，输出结果都为字符串
 
+```java
+class test{
+    public static void main(String [] args){
+        int a = 10;
+        int b = 9;
+        System.out.println(a+","+b);
+}
+```
+
+### 数据类型转换与自动类型提升
+
+#### 自动数据转换
+
+小数据类型变量可以直接转换为大数据类型变量
+
+> byte - &gt;short -&gt; int -&gt;long -&gt;float -&gt;double
+>
+> char -&gt;int   char只能给int
+
+```java
+class test{
+    public static void main(string[] args){
+    byte b = 10;
+    short s = b;
+    int i = s;
+    long l = i;
+    float f = l;
+    double d= f;
+    System.out.println(b+","+s+","+i+","+l+","+f+","+d);
+    }
+}
+```
+
+#### 强制类型转换
+
+将大数据类型变量强行转变为小数据类型变量（可能发生精度丢失）
+
+语法
+
+> 小数据类型 = （小数据类型） 大数据类型
+
+```java
+int i = 10;
+byte b = (byte) i; 
+```
+
+规则：
+
+> 1.大数据类型变量的值在小数类型的取值范围之内，数据完整。
+>
+> > int i =100; 
+> >
+> > byte b = \(byte\) i;//b=100
+>
+> 2.大数据类型变量的值在小数据类型变量的值之外，舍去高位字节。
+>
+> > int i = 10000;
+> >
+> >  byte b =\(byte\) i;//int 4个字节，byte1个字节，则舍去高位三个字节，即b=16
+> >
+> > 还可能发生符号位变化，如正变负
+>
+> 3.小数强转为整数，直接舍去小数部分，没有四舍五入
+>
+> > double d = 12.9; 
+> >
+> > int i = \(double\)d;//i=12
+
+#### 自动类型提升
+
+当多个数据进行算数运算时
+
+1. 若其中有Double类型数据，那么运算结果为Double类型
+2. 若其中有Float类型数据，那么运算结果为Float类型
+3. 托其中有long类型数据，则运算结果为long类型
+4. 其他情况默认提升为int类型
+
+### 表达式与运算符
+
+### 表达式
+
+通过运算符将变量或者值连接到一起，并且一定会有一个最终结果
+
+```java
+1+2;
+int a=10; a-5;
+int a=10; int b=20; a*b; b/a; a>50; a<50;
+```
+
