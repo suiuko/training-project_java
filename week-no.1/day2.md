@@ -296,13 +296,13 @@ a&b // 如果a为假，继续计算
 | :--- | :--- | :--- |
 | ？： | a?b:c | 如果a为True，则执行b,否则执行c |
 
-### 选择结构与分支
+## 选择结构与分支
 
-#### 选择结构
+### 选择结构
 
 根据已知条件进行判断，满足条件执行相应的操作
 
-#### if 基本选择
+### if 基本选择
 
 语法：
 
@@ -329,7 +329,7 @@ if(a%2==0)
 System.out.println("a的值为"+a); 
 ```
 
-#### if else 选择结构
+### if else 选择结构
 
 语法：
 
@@ -361,7 +361,7 @@ else
 System.out.println("a的值为"+a);   
 ```
 
-#### 多重 if else if 选择结构
+### 多重 if else if 选择结构
 
 语法：
 
@@ -389,7 +389,7 @@ else
 * 布尔表达式3为true，执行代码3，跳出选择结构；为false，执行else内代码4
 * 执行完代码4，跳出选择结构
 
-#### 嵌套if选择结构
+### 嵌套if选择结构
 
 语法：
 
@@ -415,7 +415,7 @@ else
 
   _**注意：只要满足语法结构，可以任意嵌套**_
 
-#### 分支结构
+### 分支结构
 
 语法：
 
@@ -447,5 +447,236 @@ switch(变量或表达式)
 4. 若与case值n相等，则执行业务代码n，随后break跳出结构
 5. 若与所有case值都不匹配则，执行default默认代码
 
+## 循环结构
 
+满足判断条件，使某段的代码重复运行
+
+### while 循环
+
+语法：
+
+```java
+while(循环条件)
+{
+    //循环体，逻辑代码
+}
+```
+
+执行流程：
+
+1. 对循环条件进行判断
+2. 结果为true，则执行循环体，然后再次执行判断
+3. 直到判断结果为false，结束循环，执行后续代码
+
+```java
+//打印10次Hello World
+int i = 1;//循环条件
+while(i<=10)//判断条件
+{
+    System.out.println("Hello world");//循环体（逻辑代码）
+    i++;//条件更新语句
+}
+```
+
+循环以上面四个部分组成
+
+```java
+class TestWhile
+{
+    public static void main(String[] args)
+    {
+        int a=1;
+        int b=1;
+        int c=1;
+        while(c<=10)
+        {
+            System.out.println("Hello World");
+            a++;
+            b++;
+            c++;//谁参与循环谁才是循环变量
+        }
+    }
+}
+```
+
+```java
+//从1加到100的和
+class Addto100
+{
+    public static void main(String[] args)
+    {
+        int a=0;
+        int count=0;
+        while(a<=100)
+        {
+            count+=a;
+            a++;
+        }
+        System.out.println("1加到100等于："+count);
+    }
+}
+```
+
+```java
+//从1加到100的奇数和
+class Addto100byjishu
+{
+    public static void main(String[] args)
+    {
+        int a=0;
+        int count=0;
+        while(a<=100)
+        {
+            count+=a;
+            a+=2;
+        }
+        System.out.println("1加到100的奇数和等于："+count);
+    }
+}
+```
+
+### 死循环
+
+```java
+class DeadWhile
+{
+    public static void main(String[] args)
+    {//循环条件一直为true，死循环
+        while(true)
+        {
+            System.out.println("Hello World");
+        }
+    }
+}
+class DeadWhile1
+{
+    public static void main(String[] args)
+    {//缺少循环语句，循环变量永远不会发生变化
+        //只要第一次判断为true，后面一直为true
+        int i=5;
+        while(i>=10)
+        {
+            System.out.println("Hello World");
+        }
+    }
+}
+```
+
+关黑窗口：ctrl + c
+
+```java
+//猜大小
+import java.util.Scanner;
+import java.util.Random;
+class Caidaxiao
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        Random r= new Random();
+        int m=r.nextInt(101);//获取随机数（0~100）
+        System.out.println("欢迎来到猜大小，猜一个数：");
+        while(true)
+        {
+            int n =sc.nextInt();
+            if(n==m)
+            {
+                System.out.println("猜对了！");
+                //跳出循环
+                break;
+            }else if(n<m)
+            {
+                System.out.println("猜小了！再猜一个数：");
+            }else 
+            {
+                System.out.println("猜大了！再猜一个数：");
+            }
+        }
+    }
+}
+```
+
+while : 先判断，再循环
+
+### do while 
+
+语法
+
+```java
+do
+{
+    //循环体代码
+}
+while(循环条件)；
+```
+
+执行流程：
+
+1. 先执行一次循环体
+2. 在判断一次循环条件，满足条件就循环，不满足就跳出
+
+特点：
+
+先执行，后判断
+
+### for 循环
+
+语法：
+
+```java
+for(循环变量;循环条件;循环更新语句)
+{
+    //循环体
+}
+```
+
+执行流程：
+
+1. 先初始化循环变量，此操作只执行一次
+2. 进行循环条件判断，满足条件，执行循环体
+3. 然后，执行条件更新语句，在进行循环条件判断
+4. 满足条件，执行循环体，直到不满足条件，结束循环
+
+特点：
+
+先判断，再执行
+
+```java
+//需求：打印10边Helloworld
+class TestFor
+{
+    public static void main(String[] args)
+    {
+        for(int i=1;i<=10;i++)
+        {
+            System.out.println("Hello World");
+        }
+    }
+}
+```
+
+循环更新语句可省，但会死循环。判断条件可省，但会失去判断能力。
+
+### 总结：while循环为不确定循环，for循环为确定循环
+
+```java
+//随堂作业：从黑窗口获取一个整数n，打印这个整数n为几位数
+import java.util.Scanner;
+class Youjiwei
+{
+    public static void main(String[] args)
+    {
+		System.out.println("输入一个数：");
+        Scanner sc=new Scanner(System.in);
+		int n =sc.nextInt();
+		int w=0;
+		do
+		{
+			n=n/10;
+			w++;
+		}while(n!=0);
+		System.out.println("有"+w+"位");
+    }
+}
+```
 
