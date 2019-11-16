@@ -113,10 +113,26 @@ Java默认是使用double
 
 1. 用''括起来
 2. 用数字表示
+3. 用unicode表示
 
 ```java
 char c1 = 'A';char c2 = '中';
+char c3 = 65;
+char c4 = '\u0041';
 ```
 
+### 基本数据类型 -- 布尔（boolean）
 
+数值只有两个，True和False
+
+```java
+boolean b1 = true;
+boolean b2 = 5>4
+```
+
+### 引用类型（对象类型）
+
+String 字符串，用"" 括起来的一个或多个字符。
+
+> 补充：字符串可以通过“+“来拼接，任何数字类型通过“+“号连接字符串，输出结果都为字符串
 
