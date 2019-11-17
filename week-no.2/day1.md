@@ -203,3 +203,42 @@ class Test {
 }
 ```
 
+```java
+class Test {
+    public static void main(string[] args)
+    {
+    int [] a ={1,2,3};
+    //使用工具类，创建一个新数组，自动将a值复制并返回一个数组
+    //copyOf（旧数组名，数组长度）
+    int [] b=java.util.Arrays.copyOf(a,a.length*2);
+    a= b;
+    }
+}
+```
+
+随堂练习：定义一个函数，此函数功能用来给数组扩容，接受一个需扩容的数组，返回扩容的数组
+
+```java
+class Test {
+        public static void main(String[] args)
+        {
+        int[] a = {1,15,26,23,30,156}; 
+        a = ArrayBoom(a);
+        for(int i=0;i<a.length;i++)
+        {
+                System.out.println(a[i]); }
+            }
+    public static int[] ArrayBoom(int[] a)
+    {
+        int[] b = new int[a.length*2]; 
+        for(int i=0;i<a.length;i++)
+        {
+        b[i]=a[i]; 
+        }
+        return b; 
+        }
+}
+```
+
+
+
