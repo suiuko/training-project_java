@@ -557,7 +557,7 @@ public static int max(int num1, int num2) {
 }
 ```
 
-#### 方法调用
+### 方法调用
 
 Java 支持两种调用方法的方式，根据方法是否返回值来选择。
 
