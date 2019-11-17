@@ -393,3 +393,27 @@ class Test
     }
 ```
 
+### JDK 排序
+
+由JDK提供的排序功能，只能升序排序
+
+`java.util.Arrays.sort(数组名);`
+
+```java
+import java.util.Arrays;
+class Test
+{
+    public static void main(String[] args)
+    {
+        int [] a={2,6,9,3,23,5,45};
+        java.util.Arrays.sort(a);
+        //遍历输出
+        for()int i =0;i<a.length;i++
+        {
+            System.out.println(a[i]);
+        }
+    }
+}
+        
+```
+
