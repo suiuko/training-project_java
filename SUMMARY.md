@@ -9,4 +9,5 @@
 * [week no.2](week-no.2/README.md)
   * [Day1](week-no.2/day1.md)
   * [Day2](week-no.2/day2.md)
+  * [Day3](week-no.2/day3.md)
 
