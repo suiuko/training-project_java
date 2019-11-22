@@ -170,3 +170,25 @@ Form表单里面有action和method属性，action属性就是表示，表单将�
 
 ```
 
+#### Select 下拉列表
+
+```markup
+<select name="game" id="">
+    <option value="" > CSGO</option>
+    <option value="" selected> cf</option>
+    <option value=""> B zhan</option>
+</select>
+```
+
+### HTML杂项
+
+字符实体：在页面上显示"&lt;h1&gt;"
+
+#### HTML标签通用属性
+
+id属性：id属性用于指定元素的识别名称，相当于一个人的身份证，是唯一的，同一个文件中不能有重复的ID，配合CSS和JS来选择元素
+
+class属性：class属性用于指定元素的类别名称，可以使用class元素给同一个文档中的多个元素进行归类，CSS就可以通过class给同一类元素设置统一的样式
+
+style属性：style属性用于给元素设定样式（内联样式或内部样式表）
+
